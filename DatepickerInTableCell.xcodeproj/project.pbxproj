@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					E7828ABD1D8F0A94009FB1A0 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ML92WQMC99;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ML92WQMC99;
 				INFOPLIST_FILE = DatepickerInTableCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nvovap.DatepickerInTableCell;
@@ -272,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ML92WQMC99;
 				INFOPLIST_FILE = DatepickerInTableCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nvovap.DatepickerInTableCell;
