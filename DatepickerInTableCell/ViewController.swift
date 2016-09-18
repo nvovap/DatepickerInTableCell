@@ -36,6 +36,31 @@ class ViewController: UIViewController {
     
     
     
+    
+    @IBAction func dateSelected(_ sender: UIDatePicker) {
+        var targetedCellIndexPath: IndexPath?
+        
+        if self.hasInlineDatePicker() {
+            // inline date picker: update the cell's date "above" the date picker cell
+            //
+            targetedCellIndexPath = IndexPath(row: (datePickerIndexPath! as NSIndexPath).row - 1, section: 0)
+        } else {
+            // external date picker: update the current "selected" cell's date
+            targetedCellIndexPath = tableView.indexPathForSelectedRow!
+        }
+        
+        let cell = tableView.cellForRow(at: targetedCellIndexPath!)
+        let targetedDatePicker = sender
+        
+        // update our data model
+        var itemData = dataArray[(targetedCellIndexPath! as NSIndexPath).row]
+        itemData[kDateKey] = targetedDatePicker.date as AnyObject?
+        dataArray[(targetedCellIndexPath! as NSIndexPath).row] = itemData
+        
+        // update the cell's date string
+        cell?.detailTextLabel?.text = dateFormatter.string(from: targetedDatePicker.date)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

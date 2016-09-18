@@ -56,6 +56,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="495913795.503627">
                                                         <!--2016-09-18 17:49:55 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="dateSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="ARB-vT-Ecm"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
