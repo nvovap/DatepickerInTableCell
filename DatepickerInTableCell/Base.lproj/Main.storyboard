@@ -100,7 +100,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sym-Zn-jBg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="y3p-dF-7DL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="y3p-dF-7DL">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="BYZ-38-t0r" id="kca-UO-K51"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="PJu-4H-iDe" id="QBI-8m-0va"/>

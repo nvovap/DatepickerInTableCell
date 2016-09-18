@@ -61,6 +61,29 @@ class ViewController: UIViewController {
         cell?.detailTextLabel?.text = dateFormatter.string(from: targetedDatePicker.date)
     }
     
+    
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        
+        let targetedCellIndexPath: IndexPath  = IndexPath(row: 1, section: 0)
+        let cell = tableView.cellForRow(at: targetedCellIndexPath as IndexPath)
+        
+        let cellLabelText = cell?.textLabel?.text
+        let dateString = cell?.detailTextLabel?.text
+        
+        print("\(cellLabelText): \(dateString)")
+        
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "MM/dd/yy, h:mm a"
+        myDateFormatter.timeZone = NSTimeZone.local
+        
+        let providedDate = myDateFormatter.date(from: dateString!)! as Date
+        
+        print(myDateFormatter.string(from: providedDate))
+        
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
