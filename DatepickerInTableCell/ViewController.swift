@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     let kDateKey  = "date"  // key for obtaining the data source item's date value
     
     // keep track of which rows have date cells
-    let kDateStartRow = 1
-    let kDateEndRow   = 2
+    let kDateStartRow = 4
+    let kDateEndRow   = 5
     
     let kDateCellID       = "dateCell";       // the cells with the start or end date
     let kDatePickerCellID = "datePickerCell"; // the cell containing the date picker
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         
-        let targetedCellIndexPath: IndexPath  = IndexPath(row: 1, section: 0)
+        let targetedCellIndexPath: IndexPath  = IndexPath(row: 4, section: 0)
         let cell = tableView.cellForRow(at: targetedCellIndexPath as IndexPath)
         
         let cellLabelText = cell?.textLabel?.text
@@ -94,7 +94,11 @@ class ViewController: UIViewController {
         let itemThree = [kTitleKey : "End Date", kDateKey : Date()] as [String : Any]
         let itemFour = [kTitleKey : "(other item1)"]
         let itemFive = [kTitleKey : "(other item2)"]
-        dataArray = [itemOne as Dictionary<String, AnyObject>, itemTwo as Dictionary<String, AnyObject>, itemThree as Dictionary<String, AnyObject>, itemFour as Dictionary<String, AnyObject>, itemFive as Dictionary<String, AnyObject>]
+        let itemSix = [kTitleKey : "(other item3)"]
+//        dataArray = [itemOne as Dictionary<String, AnyObject>, itemTwo as Dictionary<String, AnyObject>, itemThree as Dictionary<String, AnyObject>, itemFour as Dictionary<String, AnyObject>, itemFive as Dictionary<String, AnyObject>, itemSix as Dictionary<String, AnyObject>]
+        
+        
+        dataArray = [itemFour as Dictionary<String, AnyObject>, itemFive as Dictionary<String, AnyObject>, itemSix as Dictionary<String, AnyObject>, itemOne as Dictionary<String, AnyObject>, itemTwo as Dictionary<String, AnyObject>, itemThree as Dictionary<String, AnyObject>]
         
         dateFormatter.dateStyle = .short // show short-style date format
         dateFormatter.timeStyle = .short
@@ -317,6 +321,9 @@ extension ViewController: UITableViewDataSource {
             //
             cell?.textLabel?.text = itemData[kTitleKey] as? String
         }
+        
+        print(indexPath)
+        print(cell!)
         
         return cell!
     }
